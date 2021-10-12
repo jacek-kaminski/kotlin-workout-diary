@@ -12,16 +12,20 @@
         tools:layout="@layout/fragment_workout_list" >
         <action
             android:id="@+id/action_workoutListFragment_to_workoutDetailsFragment"
-            app:destination="@id/workoutDetailsFragment" />
+            app:destination="@id/workoutDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/workoutDetailsFragment"
-        android:name="com.example.workoutdiary.WorkoutDetailsFragment"
+        android:name="com.example.workoutdiary.newworkout.NewWorkoutFragment"
         android:label="WorkoutDetails"
-        tools:layout="@layout/fragment_workout_details" >
+        tools:layout="@layout/fragment_new_workout" >
         <action
-            android:id="@+id/action_workoutDetailsFragment_to_workoutListFragment"
+            android:id="@+id/action_newWorkoutFragment_to_workoutListFragment"
             app:destination="@id/workoutListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_right"
             app:popUpTo="@id/workoutListFragment" />
     </fragment>
 </navigation>

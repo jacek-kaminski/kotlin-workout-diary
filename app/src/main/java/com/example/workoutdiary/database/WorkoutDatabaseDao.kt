@@ -25,7 +25,7 @@ interface WorkoutDatabaseDao {
 
 
     /**
-     * Selects and returns all rows in the table,
+     * Selects and returns all workouts.
      *
      */
     @Query("SELECT * FROM workouts")

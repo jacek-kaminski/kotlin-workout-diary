@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.workoutdiary.database.WorkoutDatabaseDao
 
 /**
- * Provides the WorkoutDatabaseDao and context to the ViewModel.
+ * Provides the WorkoutDatabaseDao and context to the WorkoutListViewModel.
  */
 class WorkoutListViewModelFactory(
     private val dataSource: WorkoutDatabaseDao,

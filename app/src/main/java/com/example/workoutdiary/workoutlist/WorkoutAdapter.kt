@@ -8,18 +8,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.workoutdiary.database.Workout
 import com.example.workoutdiary.databinding.ListItemWorkoutBinding
 
+/**
+ *  Adapter for the workout list.
+ */
 class WorkoutAdapter : ListAdapter<Workout, WorkoutAdapter.ViewHolder>(WorkoutDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        return ViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = getItem(position)
+        holder.bind(item)
     }
 
 
-    class ViewHolder private constructor(val binding: ListItemWorkoutBinding) :
+    class ViewHolder private constructor(private val binding: ListItemWorkoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Workout) {

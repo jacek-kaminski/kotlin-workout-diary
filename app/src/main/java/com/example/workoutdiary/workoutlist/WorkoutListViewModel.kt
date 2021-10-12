@@ -26,12 +26,24 @@ class WorkoutListViewModel(
     val showSnackbarEvent: LiveData<Boolean?>
         get() = _showSnackbarEvent
 
-    fun addNewWorkout() {
+    fun onCreateNewWorkout() {
         viewModelScope.launch {
-            val newWorkout = Workout(0L, "new")
-            database.insert(newWorkout)
-            _showSnackbarEvent.value = true
+//            val newWorkout = Workout(0L, "new")
+//            database.insert(newWorkout)
+//            _showSnackbarEvent.value = true
+
+            // we are going to second fragment
+            _navigateToAddWorkout.value = true
         }
+    }
+
+    private val _navigateToAddWorkout = MutableLiveData<Boolean?>()
+
+    val navigateToAddWorkout: LiveData<Boolean?>
+        get() = _navigateToAddWorkout
+
+    fun doneNavigating() {
+        _navigateToAddWorkout.value = null
     }
 
     fun doneShowingSnackbar() {
