@@ -1,10 +1,7 @@
 package com.example.workoutdiary.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface WorkoutDatabaseDao {
@@ -15,6 +12,9 @@ interface WorkoutDatabaseDao {
     @Update
     suspend fun update(workout: Workout)
 
+    @Delete
+    suspend fun delete(workout: Workout)
+
     /**
      * Selects and returns workout with given id.
      *
@@ -22,7 +22,6 @@ interface WorkoutDatabaseDao {
      */
     @Query("SELECT * FROM workouts WHERE id = :workoutId")
     suspend fun find(workoutId: Long): Workout
-
 
     /**
      * Selects and returns all workouts.

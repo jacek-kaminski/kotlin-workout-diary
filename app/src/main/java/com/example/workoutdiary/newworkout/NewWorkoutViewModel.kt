@@ -11,9 +11,14 @@ import kotlinx.coroutines.launch
 class NewWorkoutViewModel(dataSource: WorkoutDatabaseDao) : ViewModel() {
 
     val database = dataSource
+
     private val _navigateToWorkoutList = MutableLiveData<Boolean?>()
     val navigateToWorkoutList: LiveData<Boolean?>
         get() = _navigateToWorkoutList
+
+    private var _showSnackbarEvent = MutableLiveData<Boolean?>()
+    val showSnackbarEvent: LiveData<Boolean?>
+        get() = _showSnackbarEvent
 
 
     fun addNewWorkout(name: String, date: String, duration: Long, mood: String, exercises: String) {
@@ -22,7 +27,12 @@ class NewWorkoutViewModel(dataSource: WorkoutDatabaseDao) : ViewModel() {
             val newWorkout = Workout(0L, name, date, duration, mood, exercises)
             database.insert(newWorkout)
             _navigateToWorkoutList.value = true
+            _showSnackbarEvent.value = true
         }
+    }
+
+    fun doneShowingSnackbar() {
+        _showSnackbarEvent.value = false
     }
 
     fun doneNavigating() {

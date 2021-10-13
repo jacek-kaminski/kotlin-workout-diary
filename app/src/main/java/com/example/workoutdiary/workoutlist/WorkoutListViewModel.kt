@@ -1,6 +1,5 @@
 package com.example.workoutdiary.workoutlist
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,8 +9,7 @@ import com.example.workoutdiary.database.WorkoutDatabaseDao
 import kotlinx.coroutines.launch
 
 class WorkoutListViewModel(
-    dataSource: WorkoutDatabaseDao,
-    application: Application
+    dataSource: WorkoutDatabaseDao
 ) : ViewModel() {
 
 
@@ -28,12 +26,14 @@ class WorkoutListViewModel(
 
     fun onCreateNewWorkout() {
         viewModelScope.launch {
-//            val newWorkout = Workout(0L, "new")
-//            database.insert(newWorkout)
-//            _showSnackbarEvent.value = true
-
-            // we are going to second fragment
             _navigateToAddWorkout.value = true
+        }
+    }
+
+    fun onDeleteNewWorkout(workout: Workout) {
+        viewModelScope.launch {
+            database.delete(workout)
+            _showSnackbarEvent.value = true
         }
     }
 

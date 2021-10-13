@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workoutdiary.database.Workout
 import com.example.workoutdiary.databinding.ListItemWorkoutBinding
+import com.example.workoutdiary.generated.callback.OnClickListener
 
 /**
  *  Adapter for the workout list.
  */
-class WorkoutAdapter : ListAdapter<Workout, WorkoutAdapter.ViewHolder>(WorkoutDiffCallback()) {
+class WorkoutListAdapter(private val actionListener: OnListItemActionListener) :
+    ListAdapter<Workout, WorkoutListAdapter.ViewHolder>(WorkoutDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
@@ -19,15 +21,16 @@ class WorkoutAdapter : ListAdapter<Workout, WorkoutAdapter.ViewHolder>(WorkoutDi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item)
+        holder.bind(item, actionListener)
     }
 
 
     class ViewHolder private constructor(private val binding: ListItemWorkoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Workout) {
+        fun bind(item: Workout, onListItemActionListener: OnListItemActionListener) {
             binding.workout = item
+            binding.deleteButton.setOnClickListener { onListItemActionListener.onItemDelete(item) }
             binding.executePendingBindings()
         }
 
@@ -51,4 +54,11 @@ class WorkoutDiffCallback : DiffUtil.ItemCallback<Workout>() {
         return oldItem == newItem
     }
 
+}
+
+interface OnListItemActionListener {
+    /**
+     * Performs an action on delete button click
+     */
+    fun onItemDelete(workout: Workout)
 }

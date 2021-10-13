@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.workoutdiary.R
 import com.example.workoutdiary.database.AppDatabase
 import com.example.workoutdiary.databinding.FragmentNewWorkoutBinding
+import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -41,6 +42,17 @@ class NewWorkoutFragment : Fragment() {
         binding.workoutDate.setOnClickListener { this.onEditWorkoutDateClick() }
 
         calendar = Calendar.getInstance()
+
+        newWorkoutViewModel.showSnackbarEvent.observe(viewLifecycleOwner, {
+            if (it == true) {
+                Snackbar.make(
+                    requireActivity().findViewById(android.R.id.content),
+                    getString(R.string.workout_added_message),
+                    Snackbar.LENGTH_SHORT // How long to display the message.
+                ).show()
+                newWorkoutViewModel.doneShowingSnackbar()
+            }
+        })
 
         newWorkoutViewModel.navigateToWorkoutList.observe(viewLifecycleOwner, {
             it?.let {
