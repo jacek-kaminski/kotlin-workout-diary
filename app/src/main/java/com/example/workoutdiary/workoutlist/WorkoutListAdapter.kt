@@ -2,12 +2,11 @@ package com.example.workoutdiary.workoutlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workoutdiary.database.Workout
 import com.example.workoutdiary.databinding.ListItemWorkoutBinding
-import com.example.workoutdiary.generated.callback.OnClickListener
 
 /**
  *  Adapter for the workout list.
@@ -23,7 +22,6 @@ class WorkoutListAdapter(private val actionListener: OnListItemActionListener) :
         val item = getItem(position)
         holder.bind(item, actionListener)
     }
-
 
     class ViewHolder private constructor(private val binding: ListItemWorkoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -53,12 +51,13 @@ class WorkoutDiffCallback : DiffUtil.ItemCallback<Workout>() {
     override fun areContentsTheSame(oldItem: Workout, newItem: Workout): Boolean {
         return oldItem == newItem
     }
-
 }
 
+
 interface OnListItemActionListener {
+
     /**
-     * Performs an action on delete button click
+     * Performs an action on delete button click.
      */
     fun onItemDelete(workout: Workout)
 }

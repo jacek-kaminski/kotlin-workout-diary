@@ -15,6 +15,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FD1E08</color>
 
+<!--    Mood colors-->
+    <color name="mood_great">#82BF45</color>
+    <color name="mood_good">#C9D952</color>
+    <color name="mood_average">#F2C12E</color>
+    <color name="mood_bad">#F29A2E</color>
+    <color name="mood_terrible">#F26666</color>
+
 
 
 

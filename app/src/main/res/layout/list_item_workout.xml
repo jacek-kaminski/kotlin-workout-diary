@@ -39,28 +39,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/mood_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:workoutMoodIcon="@{workout}" />
+
             <TextView
                 android:id="@+id/workout_date"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/workout_name"
                 app:layout_constraintTop_toBottomOf="@+id/workout_name"
                 app:workoutDate="@{workout}"
-                tools:text="Wednesday" />
+                tools:text="12.10.2021" />
 
             <TextView
                 android:id="@+id/workout_name"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toEndOf="@+id/mood_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:workoutName="@{workout}"
-                tools:text="Excellent!!!" />
+                tools:text="Sample Jacek's Training" />
 
             <ImageButton
                 android:id="@+id/delete_button"
@@ -73,6 +85,7 @@
                 app:layout_constraintTop_toTopOf="@+id/workout_name"
                 app:srcCompat="@drawable/ic_delete"
                 app:tint="@color/red" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

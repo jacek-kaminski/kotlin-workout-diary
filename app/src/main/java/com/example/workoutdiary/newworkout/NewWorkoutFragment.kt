@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.workoutdiary.R
 import com.example.workoutdiary.database.AppDatabase
 import com.example.workoutdiary.databinding.FragmentNewWorkoutBinding
+import com.example.workoutdiary.enums.WorkoutMood
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,7 +63,25 @@ class NewWorkoutFragment : Fragment() {
             }
         })
 
+        initMoodSelectors()
+
+        binding.selectedMood = null
+
         return binding.root
+    }
+
+    private fun initMoodSelectors() {
+        binding.apply {
+            moodItemGreat.setOnClickListener { toggleMood(WorkoutMood.GREAT) }
+            moodItemGood.setOnClickListener { toggleMood(WorkoutMood.GOOD) }
+            moodItemAverage.setOnClickListener { toggleMood(WorkoutMood.AVERAGE) }
+            moodItemBad.setOnClickListener { toggleMood(WorkoutMood.BAD) }
+            moodItemTerrible.setOnClickListener { toggleMood(WorkoutMood.TERRIBLE) }
+        }
+    }
+
+    private fun toggleMood(mood: WorkoutMood) {
+        binding.selectedMood = if (binding.selectedMood == mood) null else mood
     }
 
     private fun onAddNewReworkClick() {
@@ -71,8 +90,8 @@ class NewWorkoutFragment : Fragment() {
                 binding.workoutName.text.toString(),
                 binding.workoutDate.text.toString(),
                 binding.workoutDuration.text.toString().toLong(),
-                binding.workoutMood.text.toString(),
-                binding.workoutExercises.text.toString()
+                binding.workoutExercises.text.toString(),
+                binding.selectedMood!!,
             )
         } else {
             return

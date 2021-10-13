@@ -20,8 +20,14 @@ interface WorkoutDatabaseDao {
      *
      * @param workoutId
      */
-    @Query("SELECT * FROM workouts WHERE id = :workoutId")
+    @Query("SELECT * FROM workouts WHERE workoutId = :workoutId")
     suspend fun find(workoutId: Long): Workout
+
+
+    @Transaction
+    @Query("SELECT * FROM workouts WHERE workoutId = :workoutId")
+    suspend fun findWorkoutsWithExercises(workoutId: Long): WorkoutWithExercises
+
 
     /**
      * Selects and returns all workouts.

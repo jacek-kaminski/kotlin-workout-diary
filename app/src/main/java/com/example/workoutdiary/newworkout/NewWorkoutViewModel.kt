@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.workoutdiary.database.Workout
 import com.example.workoutdiary.database.WorkoutDatabaseDao
+import com.example.workoutdiary.enums.WorkoutMood
 import kotlinx.coroutines.launch
 
 class NewWorkoutViewModel(dataSource: WorkoutDatabaseDao) : ViewModel() {
@@ -21,7 +22,13 @@ class NewWorkoutViewModel(dataSource: WorkoutDatabaseDao) : ViewModel() {
         get() = _showSnackbarEvent
 
 
-    fun addNewWorkout(name: String, date: String, duration: Long, mood: String, exercises: String) {
+    fun addNewWorkout(
+        name: String,
+        date: String,
+        duration: Long,
+        exercises: String,
+        mood: WorkoutMood
+    ) {
         viewModelScope.launch {
 
             val newWorkout = Workout(0L, name, date, duration, mood, exercises)

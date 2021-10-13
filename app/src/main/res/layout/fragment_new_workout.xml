@@ -7,7 +7,10 @@
     <data>
 
         <variable
+            name="selectedMood"
+            type="com.example.workoutdiary.enums.WorkoutMood" />
 
+        <variable
             name="newWorkoutViewModel"
             type="com.example.workoutdiary.newworkout.NewWorkoutViewModel" />
     </data>
@@ -71,18 +74,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/workout_date" />
 
-        <EditText
-            android:id="@+id/workout_mood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="What was your mood?"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_duration" />
 
         <EditText
             android:id="@+id/workout_exercises"
@@ -95,8 +86,23 @@
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_mood" />
+            app:layout_constraintTop_toBottomOf="@+id/workout_duration" />
 
+        <TextView
+            android:id="@+id/workout_mood"
+            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:hint="Select your mood:"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workout_exercises" />
 
         <Button
             android:id="@+id/add_new_workout_button"
@@ -109,6 +115,72 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/mood_item_great"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.GREAT ? @drawable/square_background_selected : @drawable/square_background}"
+            android:padding="8dp"
+            android:src="@drawable/ic_mood_happy_love"
+            app:layout_constraintEnd_toStartOf="@+id/mood_item_good"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workout_mood"
+            app:tint="@color/mood_great" />
+
+        <ImageView
+            android:id="@+id/mood_item_good"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.GOOD ? @drawable/square_background_selected : @drawable/square_background}"
+            android:padding="8dp"
+            android:src="@drawable/ic_mood_happy"
+            app:layout_constraintEnd_toStartOf="@+id/mood_item_average"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/mood_item_great"
+            app:layout_constraintTop_toTopOf="@+id/mood_item_great"
+            app:tint="@color/mood_good" />
+
+        <ImageView
+            android:id="@+id/mood_item_average"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.AVERAGE ? @drawable/square_background_selected : @drawable/square_background}"
+            android:padding="8dp"
+            android:src="@drawable/ic_mood_bored"
+            app:layout_constraintEnd_toStartOf="@+id/mood_item_bad"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/mood_item_good"
+            app:layout_constraintTop_toTopOf="@+id/mood_item_good"
+            app:tint="@color/mood_average" />
+
+        <ImageView
+            android:id="@+id/mood_item_bad"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.BAD ? @drawable/square_background_selected : @drawable/square_background}"
+            android:padding="8dp"
+            android:src="@drawable/ic_mood_sad"
+            app:layout_constraintEnd_toStartOf="@+id/mood_item_terrible"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/mood_item_average"
+            app:layout_constraintTop_toTopOf="@+id/mood_item_average"
+            app:tint="@color/mood_bad" />
+
+        <ImageView
+            android:id="@+id/mood_item_terrible"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.TERRIBLE ? @drawable/square_background_selected : @drawable/square_background}"
+            android:padding="8dp"
+            android:src="@drawable/ic_mood_crying"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/mood_item_bad"
+            app:layout_constraintTop_toTopOf="@+id/mood_item_bad"
+            app:tint="@color/mood_terrible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
