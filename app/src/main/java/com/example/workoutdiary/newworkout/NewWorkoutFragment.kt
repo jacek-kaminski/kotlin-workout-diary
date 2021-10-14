@@ -2,7 +2,6 @@ package com.example.workoutdiary.newworkout
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,12 +27,16 @@ class NewWorkoutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentNewWorkoutBinding>(
+        binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_new_workout, container, false
         )
         val application = requireNotNull(this.activity).application
-        val dataSource = AppDatabase.getInstance(application).workoutDatabaseDao
+        val dataSource = AppDatabase.getInstance(application).workoutDao
         val viewModelFactory = NewWorkoutViewModelFactory(dataSource)
+
+        setHasOptionsMenu(false)
+        activity?.actionBar?.setIcon(R.drawable.ic_delete)
+
         newWorkoutViewModel =
             ViewModelProvider(this, viewModelFactory).get(NewWorkoutViewModel::class.java)
 

@@ -1,11 +1,9 @@
 package com.example.workoutdiary.workoutlist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.workoutdiary.R
@@ -21,15 +19,17 @@ class WorkoutListFragment : Fragment(), OnListItemActionListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = DataBindingUtil.inflate<FragmentWorkoutListBinding>(
             inflater,
             R.layout.fragment_workout_list,
             container,
             false
         )
+
+
         val application = requireNotNull(this.activity).application
-        val dataSource = AppDatabase.getInstance(application).workoutDatabaseDao
+        val dataSource = AppDatabase.getInstance(application).workoutDao
         val viewModelFactory = WorkoutListViewModelFactory(dataSource)
 
         workoutListViewModel =
@@ -65,6 +65,10 @@ class WorkoutListFragment : Fragment(), OnListItemActionListener {
             }
         })
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.sample_menu, menu)
     }
 
     override fun onItemDelete(workout: Workout) {

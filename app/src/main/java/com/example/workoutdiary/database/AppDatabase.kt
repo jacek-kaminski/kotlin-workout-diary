@@ -6,11 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [Workout::class, Exercise::class], version = 2, exportSchema = false)
+@Database(entities = [Workout::class, Exercise::class, WorkoutExerciseCrossRef::class], version = 3, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract val workoutDatabaseDao: WorkoutDatabaseDao
+    abstract val workoutDao: WorkoutDao
+    abstract val exerciseDao: ExerciseDao
 
     companion object {
 

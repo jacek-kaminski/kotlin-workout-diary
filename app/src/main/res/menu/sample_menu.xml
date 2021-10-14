@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/exerciseListFragment"
+            android:icon="@drawable/ic_mood_happy"
+            android:title="exercises-list" />
+
+        <item
+            android:id="@+id/action_done"
+            android:icon="@drawable/ic_mood_blink"
+            android:title="TEST ACTION" />
+
+        <item
+            android:id="@+id/action_bam"
+            android:icon="@drawable/ic_mood_laugh_cry"
+            android:title="option3" />
+    </group>
+
+    <item android:title="Second section">
+        <menu>
+            <item
+                android:id="@+id/nav_1"
+                android:icon="@drawable/ic_mood_blink"
+                android:title="option2" />
+
+            <item
+                android:id="@+id/nav_2"
+                android:icon="@drawable/ic_mood_laugh_cry"
+                android:title="option3" />
+        </menu>
+    </item>
+
+</menu>

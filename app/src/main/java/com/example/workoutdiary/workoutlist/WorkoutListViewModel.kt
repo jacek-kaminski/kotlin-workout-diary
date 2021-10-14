@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.workoutdiary.database.Workout
-import com.example.workoutdiary.database.WorkoutDatabaseDao
+import com.example.workoutdiary.database.WorkoutDao
 import kotlinx.coroutines.launch
 
 class WorkoutListViewModel(
-    dataSource: WorkoutDatabaseDao
+    dataSource: WorkoutDao
 ) : ViewModel() {
 
 

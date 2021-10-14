@@ -2,12 +2,12 @@ package com.example.workoutdiary.newworkout
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.workoutdiary.database.WorkoutDatabaseDao
+import com.example.workoutdiary.database.WorkoutDao
 
 /**
  * Provides the WorkoutDatabaseDao and context to the NewWorkoutViewModel.
  */
-class NewWorkoutViewModelFactory(private val dataSource: WorkoutDatabaseDao) :
+class NewWorkoutViewModelFactory(private val dataSource: WorkoutDao) :
     ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

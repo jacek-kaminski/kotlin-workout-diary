@@ -2,6 +2,7 @@
     <string name="app_name">WorkoutDiary</string>
 
     <string name="my_workouts_title">My Workouts</string>
+    <string name="my_exercises_title">My Exercises</string>
     <string name="workout_added_message">Your Workout was successfully added!</string>
     <string name="workout_removed_message">Your Workout was successfully deleted!</string>
     <string name="workout_details_label">Workout details</string>

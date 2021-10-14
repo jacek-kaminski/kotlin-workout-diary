@@ -8,24 +8,42 @@
     <fragment
         android:id="@+id/workoutListFragment"
         android:name="com.example.workoutdiary.workoutlist.WorkoutListFragment"
-        android:label="WorkoutList"
-        tools:layout="@layout/fragment_workout_list" >
+        android:label="Workout list"
+        tools:layout="@layout/fragment_workout_list">
         <action
             android:id="@+id/action_workoutListFragment_to_workoutDetailsFragment"
-            app:destination="@id/workoutDetailsFragment"
+            app:destination="@id/newWorkoutFragment"
             app:enterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
-        android:id="@+id/workoutDetailsFragment"
+        android:id="@+id/newWorkoutFragment"
         android:name="com.example.workoutdiary.newworkout.NewWorkoutFragment"
-        android:label="WorkoutDetails"
-        tools:layout="@layout/fragment_new_workout" >
+        android:label="Add new workout"
+        tools:layout="@layout/fragment_new_workout">
         <action
             android:id="@+id/action_newWorkoutFragment_to_workoutListFragment"
             app:destination="@id/workoutListFragment"
             app:enterAnim="@anim/slide_in_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popUpTo="@id/workoutListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseListFragment"
+        android:name="com.example.workoutdiary.exerciselist.ExerciseListFragment"
+        android:label="ExerciseListFragment"
+        tools:layout="@layout/fragment_exercise_list" >
+        <action
+            android:id="@+id/action_exerciseListFragment_to_newExerciseFragment"
+            app:destination="@id/newExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newExerciseFragment"
+        android:name="com.example.workoutdiary.newexercise.NewExerciseFragment"
+        android:label="NewExerciseFragment"
+        tools:layout="@layout/fragment_new_exercise" >
+        <action
+            android:id="@+id/action_newExerciseFragment_to_exerciseListFragment"
+            app:destination="@id/exerciseListFragment" />
     </fragment>
 </navigation>
