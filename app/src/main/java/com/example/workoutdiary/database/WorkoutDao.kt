@@ -31,7 +31,6 @@ interface WorkoutDao {
 
     /**
      * Selects and returns all workouts.
-     *
      */
     @Query("SELECT * FROM workouts")
     fun findAllWorkouts(): LiveData<List<Workout>>

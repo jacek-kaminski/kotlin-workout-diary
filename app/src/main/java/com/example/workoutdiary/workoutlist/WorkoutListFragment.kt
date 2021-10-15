@@ -26,8 +26,6 @@ class WorkoutListFragment : Fragment(), OnListItemActionListener {
             container,
             false
         )
-
-
         val application = requireNotNull(this.activity).application
         val dataSource = AppDatabase.getInstance(application).workoutDao
         val viewModelFactory = WorkoutListViewModelFactory(dataSource)
@@ -41,7 +39,9 @@ class WorkoutListFragment : Fragment(), OnListItemActionListener {
         binding.workoutList.adapter = adapter
 
         workoutListViewModel.workouts.observe(
-            viewLifecycleOwner, { it?.let { adapter.submitList(it) } })
+            viewLifecycleOwner,
+            { it?.let { adapter.submitList(it) } }
+        )
 
         binding.lifecycleOwner = this
 

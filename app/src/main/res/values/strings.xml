@@ -3,8 +3,30 @@
 
     <string name="my_workouts_title">My Workouts</string>
     <string name="my_exercises_title">My Exercises</string>
-    <string name="workout_added_message">Your Workout was successfully added!</string>
-    <string name="workout_removed_message">Your Workout was successfully deleted!</string>
+
     <string name="workout_details_label">Workout details</string>
+    <string name="exercise_details_label">Exercise details</string>
+
+    <string-array name="exercise_types_array">
+        <item>Legs</item>
+        <item>Back</item>
+        <item>Chest</item>
+        <item>Arms</item>
+        <item>Biceps</item>
+        <item>Triceps</item>
+        <item>Abs</item>
+        <item>Cardio</item>
+        <item>Recreational</item>
+    </string-array>
+
+<!--    Messages-->
+    <string name="workout_added_message">Your workout was successfully added!</string>
+    <string name="workout_removed_message">Your workout was successfully deleted!</string>
+    <string name="exercise_added_message">Your exercise was successfully added!</string>
+    <string name="exercise_removed_message">Your exercise was successfully deleted!</string>
+
+<!--    Formats -->
+    <string name="exercise_duration_format">Estimated  duration: %d min</string>
+
 
 </resources>

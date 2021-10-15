@@ -1,9 +1,7 @@
 package com.example.workoutdiary.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Update
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
 @Dao
 interface ExerciseDao {
@@ -16,4 +14,11 @@ interface ExerciseDao {
 
     @Delete
     suspend fun delete(exercise: Exercise)
+
+    /**
+     * Selects and returns all exercises.
+     */
+    @Query("SELECT * FROM exercises")
+    fun findAllExercises(): LiveData<List<Exercise>>
+
 }

@@ -7,10 +7,6 @@
     <data>
 
         <variable
-            name="selectedMood"
-            type="com.example.workoutdiary.enums.WorkoutMood" />
-
-        <variable
             name="newWorkoutViewModel"
             type="com.example.workoutdiary.newworkout.NewWorkoutViewModel" />
     </data>
@@ -26,162 +22,80 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/workout_details_label"
+            android:text="@string/exercise_details_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/workout_name"
+            android:id="@+id/exercise_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:hint="Workout name"
+            android:hint="Type your exercise name"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <EditText
-            android:id="@+id/workout_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:hint="Select date"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_name"
-            tools:ignore="TextFields" />
-
-        <EditText
-            android:id="@+id/workout_duration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="Give duration in minutes"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_date" />
-
-
-        <EditText
-            android:id="@+id/workout_exercises"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="Type your excersizes"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_duration" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/workout_mood"
+            android:id="@+id/exercise_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            app:layout_constraintBottom_toTopOf="@+id/exercise_type_spinner"
+            app:layout_constraintStart_toStartOf="@+id/exercise_type_spinner" />
+
+        <Spinner
+            android:id="@+id/exercise_type_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_name" />
+
+        <TextView
+            android:id="@+id/exercise_duration_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estimated duration"
+            app:layout_constraintBottom_toTopOf="@+id/exercise_duration"
+            app:layout_constraintStart_toStartOf="@+id/exercise_duration" />
+
+        <EditText
+            android:id="@+id/exercise_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:gravity="center"
-            android:hint="Select your mood:"
+            android:cursorVisible="false"
+            android:hint="Type estimated exercise duration"
             android:minHeight="48dp"
-            android:textSize="16dp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_exercises" />
+            app:layout_constraintTop_toBottomOf="@+id/exercise_type_spinner"
+            tools:ignore="TextFields" />
 
         <Button
-            android:id="@+id/add_new_workout_button"
+            android:id="@+id/add_new_exercise_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Add new workout"
+            android:text="Add new exercise"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/mood_item_great"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="16dp"
-            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.GREAT ? @drawable/square_background_selected : @drawable/square_background}"
-            android:padding="8dp"
-            android:src="@drawable/ic_mood_happy_love"
-            app:layout_constraintEnd_toStartOf="@+id/mood_item_good"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workout_mood"
-            app:tint="@color/mood_great" />
-
-        <ImageView
-            android:id="@+id/mood_item_good"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.GOOD ? @drawable/square_background_selected : @drawable/square_background}"
-            android:padding="8dp"
-            android:src="@drawable/ic_mood_happy"
-            app:layout_constraintEnd_toStartOf="@+id/mood_item_average"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mood_item_great"
-            app:layout_constraintTop_toTopOf="@+id/mood_item_great"
-            app:tint="@color/mood_good" />
-
-        <ImageView
-            android:id="@+id/mood_item_average"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.AVERAGE ? @drawable/square_background_selected : @drawable/square_background}"
-            android:padding="8dp"
-            android:src="@drawable/ic_mood_bored"
-            app:layout_constraintEnd_toStartOf="@+id/mood_item_bad"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mood_item_good"
-            app:layout_constraintTop_toTopOf="@+id/mood_item_good"
-            app:tint="@color/mood_average" />
-
-        <ImageView
-            android:id="@+id/mood_item_bad"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.BAD ? @drawable/square_background_selected : @drawable/square_background}"
-            android:padding="8dp"
-            android:src="@drawable/ic_mood_sad"
-            app:layout_constraintEnd_toStartOf="@+id/mood_item_terrible"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mood_item_average"
-            app:layout_constraintTop_toTopOf="@+id/mood_item_average"
-            app:tint="@color/mood_bad" />
-
-        <ImageView
-            android:id="@+id/mood_item_terrible"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@{selectedMood == com.example.workoutdiary.enums.WorkoutMood.TERRIBLE ? @drawable/square_background_selected : @drawable/square_background}"
-            android:padding="8dp"
-            android:src="@drawable/ic_mood_crying"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mood_item_bad"
-            app:layout_constraintTop_toTopOf="@+id/mood_item_bad"
-            app:tint="@color/mood_terrible" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

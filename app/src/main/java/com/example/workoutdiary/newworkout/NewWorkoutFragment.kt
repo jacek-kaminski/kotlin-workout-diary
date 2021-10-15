@@ -42,7 +42,7 @@ class NewWorkoutFragment : Fragment() {
 
         binding.newWorkoutViewModel = newWorkoutViewModel
 
-        binding.addNewWorkoutButton.setOnClickListener { this.onAddNewReworkClick() }
+        binding.addNewWorkoutButton.setOnClickListener { this.onAddNewWorkoutClick() }
         binding.workoutDate.setOnClickListener { this.onEditWorkoutDateClick() }
 
         calendar = Calendar.getInstance()
@@ -87,7 +87,7 @@ class NewWorkoutFragment : Fragment() {
         binding.selectedMood = if (binding.selectedMood == mood) null else mood
     }
 
-    private fun onAddNewReworkClick() {
+    private fun onAddNewWorkoutClick() {
         if (areInputDataValid()) {
             newWorkoutViewModel.addNewWorkout(
                 binding.workoutName.text.toString(),

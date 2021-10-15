@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="workout"
-            type="com.example.workoutdiary.database.Workout" />
+            name="exercise"
+            type="com.example.workoutdiary.database.Exercise" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -25,39 +25,40 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/mood_icon"
+                android:id="@+id/exercise_type_icon"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_delete"
+                app:exerciseIcon="@{exercise}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:workoutMoodIcon="@{workout}" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/workout_name"
+                android:id="@+id/exercise_name"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintStart_toEndOf="@+id/mood_icon"
+                app:exerciseName="@{exercise}"
+                app:layout_constraintStart_toEndOf="@+id/exercise_type_icon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:workoutName="@{workout}"
-                tools:text="Sample Jacek's Training" />
+                tools:text="Barbell Bench Press" />
 
             <TextView
-                android:id="@+id/workout_date"
+                android:id="@+id/exercise_duration"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
+                app:exerciseDuration="@{exercise}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/workout_name"
-                app:layout_constraintTop_toBottomOf="@+id/workout_name"
-                app:workoutDate="@{workout}"
-                tools:text="12.10.2021" />
+                app:layout_constraintStart_toStartOf="@+id/exercise_name"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_name"
+                tools:text="Estimated duration: 15 min" />
 
             <ImageButton
                 android:id="@+id/delete_button"
@@ -65,9 +66,9 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/workout_date"
+                app:layout_constraintBottom_toBottomOf="@+id/exercise_duration"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/workout_name"
+                app:layout_constraintTop_toTopOf="@+id/exercise_name"
                 app:srcCompat="@drawable/ic_delete"
                 app:tint="@color/red" />
 

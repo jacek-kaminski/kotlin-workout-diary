@@ -6,16 +6,15 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
-    <color name="black_gray">#212121</color>
-    <color name="dark_gray">#363636</color>
-    <color name="light_gray">#D4D4D4</color>
-    <color name="yellow">#FFC700</color>
-    <color name="orange">#FFAC00</color>
+    <color name="gray_dark">#FF212121</color>
+    <color name="gray_light">#FF484848</color>
+    <color name="amber">#FFFFC107</color>
+    <color name="amber_light">#FFFFF350</color>
+    <color name="amber_dark">#FFC79100</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#FD1E08</color>
 
-<!--    Mood colors-->
+    <!--    Mood colors-->
     <color name="mood_great">#82BF45</color>
     <color name="mood_good">#C9D952</color>
     <color name="mood_average">#F2C12E</color>
@@ -23,6 +22,17 @@
     <color name="mood_terrible">#F26666</color>
 
 
+    <color name="red">#f44336</color>
+    <color name="pink">#e91e63</color>
+    <color name="purple">#9c27b0</color>
+    <color name="purple_deep">#673ab7</color>
+    <color name="indigo">#3f51b5</color>
+    <color name="blue">#2196f3</color>
+    <color name="green">#4caf50</color>
+    <color name="lime">#cddc39</color>
+    <color name="orange">#ffc107</color>
+    <color name="teal">#469990</color>
+    <color name="brown">#000075</color>
 
 
 </resources>
