@@ -7,10 +7,16 @@ enum class ExerciseType(val value: String) {
     LEGS("Legs"),
     BACK("Back"),
     CHEST("Chest"),
-    ARMS("Arms"), //todo
-    BICEPS("Biceps"), //todo
-    TRICEPS("Triceps"), //todo
+    ARMS("Arms"),
+    BICEPS("Biceps"),
+    TRICEPS("Triceps"),
     ABS("Abs"),
     CARDIO("Cardio"),
-    RECREATIONAL("Recreational") //todo
+    RECREATIONAL("Recreational");
+
+    companion object {
+        fun stringValues(): List<String> {
+            return values().map { type -> type.value }.toList()
+        }
+    }
 }

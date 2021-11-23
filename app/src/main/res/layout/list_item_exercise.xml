@@ -31,6 +31,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/square_background_amber"
+                android:padding="8dp"
                 android:src="@drawable/ic_delete"
                 app:exerciseIcon="@{exercise}"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -43,6 +45,9 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:exerciseName="@{exercise}"
                 app:layout_constraintStart_toEndOf="@+id/exercise_type_icon"
                 app:layout_constraintTop_toTopOf="parent"
@@ -52,8 +57,10 @@
                 android:id="@+id/exercise_duration"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
+                android:textColor="@color/gray_light"
+                android:textSize="12sp"
+                android:typeface="sans"
                 app:exerciseDuration="@{exercise}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/exercise_name"
@@ -66,11 +73,11 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/white"
+                android:src="@{exercise.favorite ? @drawable/ic_favorite : @drawable/ic_favorite_empty }"
                 app:layout_constraintBottom_toBottomOf="@+id/exercise_duration"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/exercise_name"
-                app:srcCompat="@drawable/ic_delete"
-                app:tint="@color/red" />
+                app:tint="@color/black" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

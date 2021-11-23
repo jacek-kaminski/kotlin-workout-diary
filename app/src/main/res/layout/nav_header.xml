@@ -2,26 +2,38 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navHeader"
     android:layout_width="match_parent"
-    android:layout_height="192dp"
-    android:background="?attr/colorPrimaryDark"
-    android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSecondary"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
     <ImageView
         android:id="@+id/navHeaderImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/horizontal_margin"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="@dimen/horizontal_margin"
-        android:layout_marginBottom="24dp"
-        android:scaleType="fitCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_delete" />
+        app:srcCompat="@mipmap/calendar" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:gravity="start"
+        android:text="Workout\nDiary"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/navHeaderImage"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/navHeaderImage"
+        app:layout_constraintTop_toTopOf="@+id/navHeaderImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

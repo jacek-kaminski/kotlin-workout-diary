@@ -10,5 +10,6 @@ data class Exercise(
     val exerciseId: Long,
     val name: String,
     val type: ExerciseType,
-    val duration: Long
+    val duration: Long,
+    val isFavorite: Boolean = false
 )

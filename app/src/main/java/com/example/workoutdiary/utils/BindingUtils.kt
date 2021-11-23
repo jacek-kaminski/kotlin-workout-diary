@@ -69,59 +69,33 @@ class BindingUtils {
             when (item.type) {
                 ExerciseType.LEGS -> {
                     setImageResource(R.drawable.ic_exercise_legs)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.BACK -> {
                     setImageResource(R.drawable.ic_exercise_back)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.CHEST -> {
                     setImageResource(R.drawable.ic_exercise_chest)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.ARMS -> {
                     setImageResource(R.drawable.ic_exercise_arms)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.BICEPS -> {
                     setImageResource(R.drawable.ic_exercise_biceps)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.TRICEPS -> {
                     setImageResource(R.drawable.ic_exercise_triceps)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.ABS -> {
                     setImageResource(R.drawable.ic_exercise_abs)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.CARDIO -> {
                     setImageResource(R.drawable.ic_exercise_cardio)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
                 }
                 ExerciseType.RECREATIONAL -> {
-                    setImageResource(R.drawable.ic_exercise_arms)
-                    setColorFilter(ContextCompat.getColor(context, R.color.mood_great))
+                    setImageResource(R.drawable.ic_exercise_recreational)
                 }
-                //todo to be implemented
-
-//                ExerciseType.ARMS -> {
-//                    setImageResource(R.drawable.ic_mood_happy)
-//                    setColorFilter(ContextCompat.getColor(context, R.color.mood_good))
-//                }
-//                ExerciseType.ARMS -> {
-//                    setImageResource(R.drawable.ic_mood_bored)
-//                    setColorFilter(ContextCompat.getColor(context, R.color.mood_average))
-//                }
-//                ExerciseType.ARMS -> {
-//                    setImageResource(R.drawable.ic_mood_sad)
-//                    setColorFilter(ContextCompat.getColor(context, R.color.mood_bad))
-//                }
-//                ExerciseType.ARMS -> {
-//                    setImageResource(R.drawable.ic_mood_crying)
-//                    setColorFilter(ContextCompat.getColor(context, R.color.mood_terrible))
-//                }
             }
+            setColorFilter(ContextCompat.getColor(context, R.color.black))
         }
     }
 }

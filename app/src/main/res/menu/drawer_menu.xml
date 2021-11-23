@@ -5,18 +5,14 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/exerciseListFragment"
-            android:icon="@drawable/ic_mood_happy"
-            android:title="exercises-list" />
+            android:icon="@drawable/ic_muscle"
+            android:title="Exercise list" />
 
         <item
-            android:id="@+id/action_done"
-            android:icon="@drawable/ic_mood_blink"
-            android:title="TEST ACTION" />
+            android:id="@+id/workoutListFragment"
+            android:icon="@drawable/ic_workout_checklist"
+            android:title="Workout list" />
 
-        <item
-            android:id="@+id/action_bam"
-            android:icon="@drawable/ic_mood_laugh_cry"
-            android:title="option3" />
     </group>
 
     <item android:title="Second section">

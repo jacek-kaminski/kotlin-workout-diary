@@ -68,7 +68,7 @@ class WorkoutListFragment : Fragment(), OnListItemActionListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.sample_menu, menu)
+        inflater.inflate(R.menu.drawer_menu, menu)
     }
 
     override fun onItemDelete(workout: Workout) {
